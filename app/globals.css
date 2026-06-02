@@ -62,3 +62,36 @@ body {
     text-wrap: balance;
   }
 }
+
+/* Custom media queries for short screens (landscape mobile / squished browser windows) */
+@media (max-height: 540px) {
+  .short-reduce-title {
+    font-size: 1.25rem !important;
+    line-height: 1.1 !important;
+  }
+  .short-reduce-title-lg {
+    font-size: 1.75rem !important;
+    line-height: 1 !important;
+  }
+  .short-reduce-text {
+    font-size: 0.7rem !important;
+    line-height: 1.25 !important;
+  }
+  .short-reduce-padding {
+    padding: 0.75rem !important;
+  }
+  .short-hide {
+    display: none !important;
+  }
+  .short-top-a {
+    top: 15% !important;
+  }
+  .short-top-b {
+    top: 40% !important;
+  }
+  header {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+  }
+}
+

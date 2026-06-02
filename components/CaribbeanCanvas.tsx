@@ -31,7 +31,7 @@ export default function CaribbeanCanvas({ children }: CaribbeanCanvasProps) {
 
   // 2. Preload all 120 WebP images
   useEffect(() => {
-    const totalFrames = 120;
+    const totalFrames = 372;
     let loadedCount = 0;
     const loadedImages: HTMLImageElement[] = [];
 
@@ -74,7 +74,7 @@ export default function CaribbeanCanvas({ children }: CaribbeanCanvasProps) {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    const totalFrames = 120;
+    const totalFrames = 372;
     const frameIndex = Math.min(
       totalFrames - 1,
       Math.max(0, Math.floor(progress * totalFrames))
@@ -159,7 +159,7 @@ export default function CaribbeanCanvas({ children }: CaribbeanCanvasProps) {
   }, [isLoading, smoothProgress]);
 
   return (
-    <div ref={containerRef} className="relative w-full h-[500vh] bg-midnight">
+    <div ref={containerRef} className="relative w-full h-[450vh] bg-midnight">
       {/* Dynamic Loader Overlay */}
       <AnimatePresence>
         {isLoading && (

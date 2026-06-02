@@ -10,16 +10,16 @@ export default function Home() {
   const { scrollYProgress } = useScroll();
 
   // Scroll animations for Header Elements (fade out near CTA)
-  const headerOpacity = useTransform(scrollYProgress, [0.85, 0.95], [1, 0]);
+  const headerOpacity = useTransform(scrollYProgress, [0.82, 0.94], [1, 0]);
 
-  // Beat A: Muskan Fageria - Left side, top of helm (0% - 20% scroll range of 500vh)
-  const opacityA = useTransform(scrollYProgress, [0.0, 0.05, 0.15, 0.20], [0, 1, 1, 0]);
-  const yA = useTransform(scrollYProgress, [0.0, 0.05, 0.15, 0.20], [30, 0, 0, -30]);
-  const scrollIndicatorOpacity = useTransform(scrollYProgress, [0.0, 0.04], [1, 0]);
+  // Beat A: Muskan Fageria - Left side, top of helm (0% - 16% scroll range of 450vh)
+  const opacityA = useTransform(scrollYProgress, [0.0, 0.04, 0.12, 0.16], [0, 1, 1, 0]);
+  const yA = useTransform(scrollYProgress, [0.0, 0.04, 0.12, 0.16], [30, 0, 0, -30]);
+  const scrollIndicatorOpacity = useTransform(scrollYProgress, [0.0, 0.03], [1, 0]);
 
-  // Beat B: About Me - Right side, lower down (22% - 39% scroll range of 500vh)
-  const opacityB = useTransform(scrollYProgress, [0.19, 0.24, 0.34, 0.39], [0, 1, 1, 0]);
-  const yB = useTransform(scrollYProgress, [0.19, 0.24, 0.34, 0.39], [30, 0, 0, -30]);
+  // Beat B: About Me - Right side, lower down (18% - 32% scroll range of 450vh)
+  const opacityB = useTransform(scrollYProgress, [0.15, 0.19, 0.28, 0.32], [0, 1, 1, 0]);
+  const yB = useTransform(scrollYProgress, [0.15, 0.19, 0.28, 0.32], [30, 0, 0, -30]);
 
   return (
     <main className="relative bg-midnight select-none text-slate-100 min-h-screen">
@@ -68,8 +68,8 @@ export default function Home() {
       {/* Scrollytelling Canvas Wrapper (fixed background) */}
       <CaribbeanCanvas>
         
-        {/* SECTION 0: Sticky Container for viewport-relative text fade animations (200vh tall) */}
-        <div className="h-[200vh] w-full relative z-10">
+        {/* SECTION 0: Sticky Container for viewport-relative text fade animations (150vh tall) */}
+        <div className="h-[150vh] w-full relative z-10">
           <div className="sticky top-0 h-screen w-full pointer-events-none">
             
             {/* Scroll Explore Prompt */}
@@ -95,10 +95,10 @@ export default function Home() {
               </div>
             </motion.div>
 
-            {/* BEAT A: Muskan Fageria - Left side, top of centerpiece */}
+            {/* BEAT A: Muskan Fageria - Left side, top of centerpiece (Moved down for header breathing room) */}
             <motion.div
               style={{ opacity: opacityA, y: yA }}
-              className="absolute left-6 md:left-16 lg:left-24 top-[18%] max-w-md text-left z-15 pointer-events-auto"
+              className="absolute left-6 md:left-16 lg:left-24 top-[26%] max-w-md text-left z-15 pointer-events-auto"
             >
               <div className="flex items-center gap-2 mb-3">
                 <Compass className="w-3.5 h-3.5 text-gold animate-spin-slow" />
@@ -123,7 +123,7 @@ export default function Home() {
               style={{ opacity: opacityB, y: yB }}
               className="absolute right-6 md:right-16 lg:right-24 top-[48%] max-w-sm text-right z-15 pointer-events-auto"
             >
-              <div className="flex flex-col items-end">
+              <div className="flex flex-col items-end bg-slate-950/50 backdrop-blur-md border border-slate-800/30 p-6 md:p-8 rounded-2xl shadow-2xl">
                 <div className="flex items-center gap-2 mb-3">
                   <User className="w-4 h-4 text-teal" />
                   <span className="text-[10px] font-semibold tracking-widest text-teal uppercase">
@@ -146,7 +146,7 @@ export default function Home() {
 
         {/* SECTION 1: Sun-Baked Geometry (Scrolls up naturally) */}
         <div className="h-screen w-full flex items-center px-6 md:px-24 lg:px-36 relative z-20 bg-transparent">
-          <div className="max-w-lg flex flex-col items-start text-left">
+          <div className="max-w-lg flex flex-col items-start text-left bg-slate-950/50 backdrop-blur-md border border-slate-800/30 p-8 md:p-10 rounded-2xl shadow-2xl">
             <div className="flex items-center gap-2 mb-3">
               <Grid className="w-4 h-4 text-teal" />
               <span className="text-xs font-semibold tracking-widest text-teal uppercase">
@@ -171,7 +171,7 @@ export default function Home() {
 
         {/* SECTION 2: Fluid Motion (Scrolls up naturally) */}
         <div className="h-screen w-full flex items-center justify-end px-6 md:px-24 lg:px-36 relative z-20 bg-transparent">
-          <div className="max-w-lg flex flex-col items-end text-right">
+          <div className="max-w-lg flex flex-col items-end text-right bg-slate-950/50 backdrop-blur-md border border-slate-800/30 p-8 md:p-10 rounded-2xl shadow-2xl">
             <div className="flex items-center justify-end gap-2 mb-3">
               <Waves className="w-4 h-4 text-gold" />
               <span className="text-xs font-semibold tracking-widest text-gold uppercase">
@@ -199,7 +199,7 @@ export default function Home() {
           id="connect"
           className="h-screen w-full flex flex-col items-center justify-center text-center px-6 relative z-20 bg-transparent"
         >
-          <div className="max-w-2xl flex flex-col items-center">
+          <div className="max-w-2xl flex flex-col items-center bg-slate-950/50 backdrop-blur-md border border-slate-800/30 p-8 md:p-12 rounded-3xl shadow-2xl">
             <div className="flex items-center gap-2 mb-3">
               <Mail className="w-4 h-4 text-gold" />
               <span className="text-xs font-semibold tracking-widest text-gold uppercase">

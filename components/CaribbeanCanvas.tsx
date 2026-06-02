@@ -89,22 +89,22 @@ export default function CaribbeanCanvas({ children }: CaribbeanCanvasProps) {
       const canvasWidth = canvas.width;
       const canvasHeight = canvas.height;
 
-      // Fit content by "contain" logic
+      // Fit content by "cover" logic to span the entire screen
       const imgRatio = imgWidth / imgHeight;
       const canvasRatio = canvasWidth / canvasHeight;
 
       let drawWidth, drawHeight, drawX, drawY;
 
       if (imgRatio > canvasRatio) {
-        drawWidth = canvasWidth;
-        drawHeight = canvasWidth / imgRatio;
-        drawX = 0;
-        drawY = (canvasHeight - drawHeight) / 2;
-      } else {
         drawWidth = canvasHeight * imgRatio;
         drawHeight = canvasHeight;
         drawX = (canvasWidth - drawWidth) / 2;
         drawY = 0;
+      } else {
+        drawWidth = canvasWidth;
+        drawHeight = canvasWidth / imgRatio;
+        drawX = 0;
+        drawY = (canvasHeight - drawHeight) / 2;
       }
 
       ctx.drawImage(img, drawX, drawY, drawWidth, drawHeight);
@@ -200,14 +200,14 @@ export default function CaribbeanCanvas({ children }: CaribbeanCanvasProps) {
         )}
       </AnimatePresence>
 
-      {/* Sticky Canvas Viewport */}
-      <div className="sticky top-0 left-0 w-full h-screen overflow-hidden flex items-center justify-center pointer-events-none z-0">
+      {/* Fixed Canvas Viewport in the Background */}
+      <div className="fixed top-0 left-0 w-full h-screen overflow-hidden flex items-center justify-center pointer-events-none z-0">
         {/* Background Radial Glow */}
         <div className="absolute inset-0 bg-radial-gradient pointer-events-none" />
         
         <canvas
           ref={canvasRef}
-          className="max-w-full max-h-full block transition-opacity duration-700"
+          className="w-full h-full block transition-opacity duration-700"
           style={{ opacity: isLoading ? 0 : 1 }}
         />
       </div>

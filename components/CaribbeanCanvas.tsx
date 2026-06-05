@@ -201,7 +201,7 @@ export default function CaribbeanCanvas({ children }: CaribbeanCanvasProps) {
       </AnimatePresence>
 
       {/* Fixed Canvas Viewport in the Background */}
-      <div className="fixed top-0 left-0 w-full h-screen overflow-hidden flex items-center justify-center pointer-events-none z-0">
+      <div className="fixed top-0 left-0 w-full h-screen overflow-hidden flex items-center justify-center pointer-events-none z-[1]">
         {/* Background Radial Glow */}
         <div className="absolute inset-0 bg-radial-gradient pointer-events-none" />
         

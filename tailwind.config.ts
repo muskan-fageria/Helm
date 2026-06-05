@@ -12,15 +12,16 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
         gold: {
-          DEFAULT: "#E5A93B",
-          hover: "#c98e25",
-          light: "#f1c372",
+          DEFAULT: "var(--accent-gold)",
+          hover: "var(--accent-gold-hover)",
         },
         teal: {
-          DEFAULT: "#2DD4BF",
-          hover: "#14b8a6",
+          DEFAULT: "var(--accent-teal)",
         },
-        midnight: "#0B131F",
+        primary: "var(--text-primary)",
+        secondary: "var(--text-secondary)",
+        card: "var(--card-bg)",
+        cardBorder: "var(--card-border)",
       },
       fontFamily: {
         serif: ["var(--font-serif)", "serif"],

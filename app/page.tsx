@@ -71,7 +71,7 @@ export default function Home() {
   const { scrollYProgress } = useScroll();
 
   // Scroll animations for Header Elements (fade out near CTA)
-  const headerOpacity = useTransform(scrollYProgress, [0.88, 0.96], [1, 0]);
+  const headerOpacity = useTransform(scrollYProgress, [0.70, 0.80], [1, 0]);
 
   // Beat A: Muskan Fageria - Left side, top of helm (0% - 13% scroll range of 550vh)
   const opacityA = useTransform(scrollYProgress, [0.0, 0.03, 0.10, 0.13], [0, 1, 1, 0]);
@@ -406,7 +406,7 @@ export default function Home() {
                       value={contactName}
                       onChange={(e) => setContactName(e.target.value)}
                       placeholder="Your name"
-                      className="w-full bg-background/50 border border-cardBorder hover:border-gold/30 focus:border-gold focus:outline-none rounded-lg px-4 py-2.5 text-sm text-primary transition-all duration-300 placeholder:text-slate-600 focus:shadow-[0_0_15px_rgba(229,169,59,0.1)]"
+                      className="w-full bg-black/30 border border-cardBorder hover:border-gold/30 focus:border-gold focus:outline-none rounded-lg px-4 py-2.5 text-sm text-primary transition-all duration-300 placeholder:text-slate-600 focus:shadow-[0_0_15px_rgba(229,169,59,0.1)]"
                     />
                   </div>
                   <div className="flex flex-col space-y-1">
@@ -418,7 +418,7 @@ export default function Home() {
                       value={contactEmail}
                       onChange={(e) => setContactEmail(e.target.value)}
                       placeholder="your@email.com"
-                      className="w-full bg-background/50 border border-cardBorder hover:border-gold/30 focus:border-gold focus:outline-none rounded-lg px-4 py-2.5 text-sm text-primary transition-all duration-300 placeholder:text-slate-600 focus:shadow-[0_0_15px_rgba(229,169,59,0.1)]"
+                      className="w-full bg-black/30 border border-cardBorder hover:border-gold/30 focus:border-gold focus:outline-none rounded-lg px-4 py-2.5 text-sm text-primary transition-all duration-300 placeholder:text-slate-600 focus:shadow-[0_0_15px_rgba(229,169,59,0.1)]"
                     />
                   </div>
                 </div>
@@ -432,7 +432,7 @@ export default function Home() {
                     onChange={(e) => setContactMessage(e.target.value)}
                     rows={4}
                     placeholder="Tell me about your vision..."
-                    className="w-full bg-background/50 border border-cardBorder hover:border-gold/30 focus:border-gold focus:outline-none rounded-lg px-4 py-2.5 text-sm text-primary transition-all duration-300 placeholder:text-slate-600 focus:shadow-[0_0_15px_rgba(229,169,59,0.1)] resize-none"
+                    className="w-full bg-black/30 border border-cardBorder hover:border-gold/30 focus:border-gold focus:outline-none rounded-lg px-4 py-2.5 text-sm text-primary transition-all duration-300 placeholder:text-slate-600 focus:shadow-[0_0_15px_rgba(229,169,59,0.1)] resize-none"
                   />
                 </div>
 

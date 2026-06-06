@@ -159,7 +159,7 @@ export default function CaribbeanCanvas({ children }: CaribbeanCanvasProps) {
   }, [isLoading, smoothProgress]);
 
   return (
-    <div ref={containerRef} className="relative w-full h-[450vh] bg-midnight">
+    <div ref={containerRef} className="relative w-full h-[550vh] bg-midnight">
       {/* Dynamic Loader Overlay */}
       <AnimatePresence>
         {isLoading && (
